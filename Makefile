@@ -118,6 +118,7 @@ test: tools
 	test 92246b0b718f4c704d37bb025717cbc66babf102 = `bin/sha1dcsum_partialcoll test/shattered-2.pdf | cut -d' ' -f1`
 	bin/sha1dcsum test/*
 	bin/sha1dcsum_partialcoll test/*
+	tmpdir=$$(mktemp -d) && mkdir -p "$$tmpdir/partial/bin" && cp bin/sha1dcsum "$$tmpdir/partial/bin/sha1dcsum" && chmod +x "$$tmpdir/partial/bin/sha1dcsum" && expected=$$(bin/sha1dcsum test/sha1_reducedsha_coll.bin | cut -d' ' -f1) && got=$$("$$tmpdir/partial/bin/sha1dcsum" test/sha1_reducedsha_coll.bin | cut -d' ' -f1) && test "$$expected" = "$$got" && rm -rf "$$tmpdir"
 	
 .PHONY: check
 check: test
