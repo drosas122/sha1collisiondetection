@@ -14,7 +14,7 @@ See accompanying file LICENSE.txt or copy at https://opensource.org/licenses/MIT
 
 ## About
 This library and command line tool were designed as near drop-in replacements for common SHA-1 libraries and sha1sum.
-They will compute the SHA-1 hash of any given file and additionally will detect cryptanalytic collision attacks against SHA-1 present in each file. It is very fast and takes less than twice the amount of time as regular SHA-1.
+They will compute the SHA-1 hash of any given file and additionally will detect cryptanaltytic collision attacks against SHA-1 present in each file. It is very fast and takes less than twice the amount of time as regular SHA-1.
 
 More specifically they will detect any cryptanalytic collision attack against SHA-1 using any of the top 32 SHA-1 disturbance vectors with probability 1:
 ```
